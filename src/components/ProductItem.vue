@@ -21,7 +21,13 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+$font: 'Source Sans Pro', sans-serif;
+    .main{
+        font-family: $font;
+        letter-spacing: -0.02em;
+    }
     li{
         width: 322px;
         height: 423px;
@@ -33,6 +39,16 @@
         box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.04), 0px 6px 10px rgba(0, 0, 0, 0.02);
         border-radius: 4px;
         transition: all 0.3s ease;
+        &:hover>.delete-product-icon{
+            display: block;
+        }
+        &:hover{
+            transform: scale(1.01);
+            z-index: 2;
+        }
+        &:active>.delete-product-icon{
+            background-color: #FF0000;
+        }
     }
     .delete-product-icon{
         display: none;
@@ -47,15 +63,12 @@
         transform: translate(-50%, -50%);
         border: 0px;
         transition: all 0.3s ease;
-    }
-    li:hover>.delete-product-icon{
-        display: block;
-    }
-    li:hover{
-        transform: scale(1.01);
-    }
-    li:active>.delete-product-icon{
-        background-color: #FF0000;
+        img{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
     }
     .inf-product{
         padding: 16px 16px 16px 24px;
@@ -63,6 +76,7 @@
     span{
         float: left;
         text-align: left;
+        @extend .main;
     }
     .name-product{
         font-size: 20px;
@@ -73,16 +87,10 @@
     .img-product{
         width: 100%;
         min-height: 200px;
-    }
-    .img-product img{
-        width: 100%;
-        height: 100%;
-    }
-    .delete-product-icon img{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        img{
+            width: 100%;
+            height: 100%;
+        }
     }
     .title-product{
         line-height: 20px;
@@ -95,32 +103,4 @@
         font-size: 24px;
         font-weight: 600;
     }
-    @media (max-width: 426px) {
-        li{
-            width: 100%;
-            height: 450px;
-            margin: 0px 0px 10px 0px;
-        }
-    }
-    @media (max-width: 1025px) {
-        li{
-            width: 375px;
-            margin: 8px;
-        }
-    }
-    @media (max-width: 1026px) {
-        li{
-            width: 635px;
-            height: 585px;
-            margin: 8px;
-        }
-    }
-    @media (max-width: 1441px) {
-        li{
-            min-width: 322px;
-            min-height: 423px;
-            margin: 8px;
-        }
-    }
-    
 </style>

@@ -41,7 +41,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
     section{
         display: flex;
         margin: 0px;
@@ -50,10 +50,5 @@ export default {
     div{
         margin-bottom: 10px;
         padding: 0px;
-    }
-    @media (max-width: 426px) {
-        section{
-            display: block;
-        } 
     }
 </style>

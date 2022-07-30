@@ -44,7 +44,14 @@ export default{
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+$font: 'Source Sans Pro', sans-serif;
+    .main{
+        font-family: $font;
+        letter-spacing: -0.02em;
+        border: 0px;
+    }
     form{
         width: 308px;
         height: 416px;
@@ -58,30 +65,29 @@ export default{
         font-weight: 400;
         font-size: 10px;
         line-height: 13px;
-        letter-spacing: -0.02em;
         padding: 0px;
         margin-bottom: 4px;
         float: left;
-    }
-    label img{
-        margin-bottom: 5px;;
-    }
+        @extend .main;
+        img{
+            margin-bottom: 5px;;
+        }
+    } 
     input{
         font-weight: 400;
         font-size: 12px;
         line-height: 15px;
-        letter-spacing: -0.02em;
         width: 100%;
         height: 26px;
         border-radius: 4px;
-        border: 0px;
         box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
         padding: 10px 16px;
         margin-bottom: 16px;
         text-overflow: ellipsis;
-    }
-    input:focus{
-        outline: 0;
+        @extend .main;
+        &:focus{
+            outline: 0;
+        }
     }
     #new-product-title{
         width: 100%;
@@ -91,88 +97,28 @@ export default{
         font-weight: 400;
         font-size: 12px;
         line-height: 15px;
-        letter-spacing: -0.02em;
         text-overflow: ellipsis;
         resize: none;
         padding: 10px 16px;
-        border: 0px;
-    }
-    #new-product-title:focus{
-        outline: 0;
+        @extend .main;
+        &:focus{
+            outline: 0;
+        }
     }
     button{
         font-weight: 600;
         font-size: 12px;
         line-height: 15px;
-        letter-spacing: -0.02em;
         width: 284px;
         height: 36px;
         border-radius: 10px;
-        border: 0px;
         color: #B4B4B4;
         transition: all 0.3s ease;
-    }
-    button:hover{
-        background-color: rgb(31, 104, 214);
-        color: #ffffff;
-        cursor: pointer;
-    }
-    @media (max-width: 426px) {
-        div{
-            height: 145px;
-        }
-        form{
-            width: 100%;
-            height: 488px;
-            padding: 0px;
-            margin: 0px auto;
-        }
-        input{
-            font-weight: 400;
-            font-size: 12px;
-            line-height: 15px;
-            max-width: 377px;
-            height: 26px;
-            padding: 10px 16px;
-            margin-bottom: 16px;
-        }
-        #new-product-title{
-            max-width: 377px;
-            height: 108px;
-            border-radius: 4px;
-            font-weight: 400;
-            font-size: 12px;
-            line-height: 15px;
-            padding: 10px 16px;
-        }
-        button{
-            font-weight: 600;
-            font-size: 12px;
-            line-height: 15px;
-            width: 100%;
-            height: 36px;
-        }
-    }
-    @media (max-width: 376px) {
-        form{
-            height: 488px;
-            padding: 0px;
-            margin: 0px auto;
-        }
-        input{
-            max-width: 327px;
-            height: 26px;
-            padding: 10px 16px;
-            margin-bottom: 16px;
-        }
-        #new-product-title{
-            max-width: 327px;
-            height: 108px;
-            padding: 10px 16px;
-        }
-        button{
-            width: 100%;
-            height: 36px;
+        @extend .main;
+        &:hover{
+            background-color: #7BAE73;
+            color: #ffffff;
+            cursor: pointer;
         }
     }
 </style>
